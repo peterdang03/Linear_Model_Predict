@@ -19,14 +19,19 @@ data<-read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_stren
 ### Model1: SIMS~ARM
 
 ```{r}
-basiccNN<- ggplot(data,aes(y=SIMS,x=ARM))
+basiccNN<- ggplot(data,aes(y=SIMS,x=ARM)) 
 ```
 
 ```{r}
-basiccNN +geom_point() +ggtitle("SIMS vs ARM")
+basiccNN +geom_point() +ggtitle("SIMS vs ARM") 
 ```
 
 We have a scatterplot for SIMS vs ARM and it seems that the plot is going up to the right. 
+
+
+
+
+
 
 ### Numerical Results 
 ```{r}
@@ -38,6 +43,13 @@ cor(SIMS~ARM,data=data)
 model1<-lm(SIMS~ARM,data=data)
 summary.lm(model1)
 ```
+
+
+
+
+
+
+
 
 ### Target Dataframe 
 
@@ -52,6 +64,18 @@ predict(model1,target,interval=c("prediction"))
 ```{r}
 predict(model1,target,interval=c("confidence"))
 ```
+
+```{r}
+armmod <- lm(SIMS~ARM,data=data)
+plot(SIMS~ARM,data=data)
+abline(armmod)
+summary.lm(armmod)
+```
+
+
+
+
+
 ### Model2 SIMS~GRIP 
 ```{r}
 basiccNN2<- ggplot(data,aes(y=SIMS,x=GRIP))
@@ -69,3 +93,19 @@ cor(SIMS~GRIP,data=data)
 ```
 
 The correlation between SIMS and GRIP is less than the correlation between SIMS and ARM. 
+
+
+### Inferential Results 2
+```{r}
+model2<-lm(SIMS~GRIP,data=data)
+summary.lm(model2)
+```
+
+The adjusted R squared form SIMS vs ARM is bigger than SIMS vs GRIP. 
+
+```{r}
+gripmod <- lm(SIMS~GRIP,data=data)
+plot(SIMS~GRIP,data=data)
+abline(gripmod)
+summary.lm(gripmod)
+```
