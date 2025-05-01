@@ -26,3 +26,4 @@ basiccNN<- ggplot(data,aes(y=SIMS,x=ARM))
 basiccNN +geom_point() +ggtitle("SIMS vs ARM")
 ```
 
+We have a scatterplot for SIMS vs ARM and it seems that the plot is going up to the right. 
