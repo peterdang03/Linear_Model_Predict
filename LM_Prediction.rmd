@@ -63,6 +63,9 @@ basiccNN2 +geom_point() +ggtitle("SIMS vs GRIP")
 
 The relationship is a positive relationship, as the plot is going up to the right. 
 
+### Numerical Results 2 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
 
-
-
+The correlation between SIMS and GRIP is less than the correlation between SIMS and ARM. 
