@@ -1,0 +1,28 @@
+---
+title: "Linear_Model_Prediction"
+author: "Peter Dang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(digits=2)
+require(tidyverse)
+require(tigerstats)
+require(knitr)
+data<-read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_strength/data.txt", sep="",header=TRUE)
+
+```
+
+
+### Model1: SIMS~ARM
+
+```{r}
+basiccNN<- ggplot(data,aes(y=SIMS,x=ARM))
+```
+
+```{r}
+basiccNN +geom_point() +ggtitle("SIMS vs ARM")
+```
+
