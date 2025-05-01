@@ -52,6 +52,17 @@ predict(model1,target,interval=c("prediction"))
 ```{r}
 predict(model1,target,interval=c("confidence"))
 ```
+### Model2 SIMS~GRIP 
+```{r}
+basiccNN2<- ggplot(data,aes(y=SIMS,x=GRIP))
+```
+
+```{r}
+basiccNN2 +geom_point() +ggtitle("SIMS vs GRIP")
+```
+
+The relationship is a positive relationship, as the plot is going up to the right. 
+
 
 
 
