@@ -101,7 +101,7 @@ model2<-lm(SIMS~GRIP,data=data)
 summary.lm(model2)
 ```
 
-The adjusted R squared form SIMS vs ARM is bigger than SIMS vs GRIP. 
+The adjusted R squared for SIMS vs ARM is bigger than SIMS vs GRIP. 
 
 ```{r}
 gripmod <- lm(SIMS~GRIP,data=data)
