@@ -129,3 +129,33 @@ summary.lm(model3)
 ```
 
 OUR equation is SIMS= -5.43387 +0.03731*ARM +0.02447*GRIP. That is the line in 3D space. 
+
+```{r}
+predict(model3,target,interval=c("prediction"))
+```
+
+```{r}
+predict(model3,target,interval=c("confidence"))
+```
+
+The prediction interval for model3 is -2.2 to 2.4, and the confidence interval is -0.23  to 0.48. 
+
+
+### ANOVA test for model1 and model3 
+```{r}
+anova(model1,model3)
+```
+
+```{r}
+anova(model2,model3)
+```
+
+
+```{r}
+anova(model1,model2)
+```
+
+Model1 is nested with Model3 and Model2 is also nested with Model3. We can compare this by using an ANOVA test, as we get our results, we can see that we have low p values. If both models are not nested, then we cannot use the ANOVA test. 
+
+
+
