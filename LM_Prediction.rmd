@@ -85,7 +85,7 @@ basiccNN2<- ggplot(data,aes(y=SIMS,x=GRIP))
 ```
 
 ```{r}
-basiccNN2 +geom_point() +ggtitle("SIMS vs GRIP")
+basiccNN2 +geom_point() +ggtitle("SIMS vs GRIP") 
 ```
 
 The relationship is a positive relationship, as the plot is going up to the right. 
@@ -107,8 +107,5 @@ summary.lm(model2)
 The adjusted R squared for SIMS vs ARM is bigger than SIMS vs GRIP. 
 
 ```{r}
-gripmod <- lm(SIMS~GRIP,data=data)
-plot(SIMS~GRIP,data=data)
-abline(gripmod)
-summary.lm(gripmod)
+basiccNN2 +geom_point() +ggtitle("SIMS vs GRIP") +geom_smooth(method=lm)
 ```
